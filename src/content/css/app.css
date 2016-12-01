@@ -1,0 +1,11 @@
+.space {
+  margin: .5%;
+}
+
+.center {
+  padding-top: 25%;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
