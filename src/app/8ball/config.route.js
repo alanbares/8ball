@@ -9,7 +9,9 @@
   
   function configFunction($routeProvider) {
     $routeProvider.when('/', {
-      templateUrl: 'app/8ball/8ball.html'
+      templateUrl: 'app/8ball/8ball.html',
+      controller: 'eightBallController',
+      controllerAs: 'vm'
     });
   }
 })();
