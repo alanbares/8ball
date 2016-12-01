@@ -1,6 +1,7 @@
 <div ng-controller="eightBallController">
  <form>
-  <input type="text" placeholder="Ask a Question" required>
-  <button >Answer</button>
+  <input type="text" placeholder="Enter a question" required>
+  <button ng-click="vm.askQuestion()">Ask</button>
+  <span ng-show="vm.displayAnswer">{{vm.showAnswer}}</span>
  </form>
 </div>

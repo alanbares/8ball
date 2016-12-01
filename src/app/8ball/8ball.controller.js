@@ -9,7 +9,7 @@
   function eightBallController(){
     var vm = this;
     
-    var advice = [
+    var answer = [
       "It is certain",
       "It is decidedly so",
       "Without a doubt",
@@ -32,7 +32,22 @@
       "Very doubtful"
     ];
     
-
+    vm.displayAnswer = false;
+    vm.showAnswer = answer[0];
+    vm.askQuestion = askQuestion;
+    
+    function askQuestion() {
+      var length = answer.length;
+      if(!vm.displayAnswer) {
+        vm.displayAnswer = true;
+      }
+      
+      vm.showAnswer = answer[randomAnswer(0, length -1)];
+    }
+    
+    function randomAnswer(min, max) {
+      return Math.floor(Math.random() * (max -min)) + min;
+    }
     
   }
 })();
