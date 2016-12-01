@@ -33,8 +33,13 @@
     ];
     
     vm.displayAnswer = false;
-    vm.showAnswer = answer[0];
+    vm.revealAnswer = answer[0];
     vm.askQuestion = askQuestion;
+    vm.newQuestion = new Question();
+    
+    function Question() {
+      this.question = '';  
+    }
     
     function askQuestion() {
       var length = answer.length;
@@ -42,12 +47,14 @@
         vm.displayAnswer = true;
       }
       
-      vm.showAnswer = answer[randomAnswer(0, length -1)];
+      vm.revealAnswer = answer[randomAnswer(0, length -1)];
+      vm.newQuestion = new Question();
     }
     
     function randomAnswer(min, max) {
       return Math.floor(Math.random() * (max -min)) + min;
     }
+    
     
   }
 })();
